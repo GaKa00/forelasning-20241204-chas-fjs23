@@ -1,6 +1,7 @@
-name: Client Lint
 
-# Client Lint / Run ESLint for client (pull_request)
+name: Client Typecheck
+
+# Client Typecheck/ Run Typecheck for client (pull_request)
 on:
   push:
     paths:
@@ -11,7 +12,7 @@ on:
 
 jobs:
   lint:
-    name: Run ESLint for client
+    name: Run Typecheck for client
     runs-on: ubuntu-latest
 
     defaults:
@@ -32,6 +33,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run ESLint
-        run: npm run lint
-
+      - name: Run typecheck
+        run: npm run typecheck
+        
